@@ -1,6 +1,6 @@
 # backrun-scanner
 
-A system that identifies backrun arbitrage opportunities across Uniswap v2 pools on Ethereum mainnet, operating in two modes simultaneously:
+A system that identifies backrun arbitrage opportunities across v2-style AMM pools on Ethereum mainnet. Each token pair is monitored on multiple venues (Uniswap v2 + SushiSwap v2) so that a swap on one venue can be arbed against another holding the same pair. Operates in two modes simultaneously:
 - **Live mode**: subscribes to pending mempool txs, identifies upcoming swaps that will move pool price meaningfully, computes the optimal backrun on another v2 pool.
 - **Historical mode**: ingests every confirmed v2 swap (via newHeads + log subscription) and runs the same opportunity-detection logic post-hoc to compute realized backrun profitability.
 
