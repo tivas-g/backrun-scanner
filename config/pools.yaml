@@ -1,10 +1,13 @@
-# Uniswap v2 pools to monitor. token0/token1 ordering is determined by
-# the sort order of token addresses (lower address = token0), not by
-# semantic preference. Decimals are required for converting raw reserves
-# to human-readable amounts and computing prices correctly.
+# Pools to monitor. Pairs are grouped: Uniswap v2 entry immediately followed by
+# the SushiSwap v2 entry for the same pair, so price divergence is easy to eyeball.
+#
+# token0/token1 ordering follows Uniswap v2 convention: lower address = token0.
+# Decimals are required for converting raw reserves to human-readable amounts.
 
 pools:
+  # ── WETH/USDC ────────────────────────────────────────────────────────────────
   - address: "0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc"
+    dex: uniswap_v2
     token0_address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
     token0_symbol: USDC
     token0_decimals: 6
@@ -12,7 +15,18 @@ pools:
     token1_symbol: WETH
     token1_decimals: 18
 
+  - address: "0x397FF1542f962076d0BFE58eA045FfA2d347ACa0"
+    dex: sushiswap_v2
+    token0_address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    token0_symbol: USDC
+    token0_decimals: 6
+    token1_address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    token1_symbol: WETH
+    token1_decimals: 18
+
+  # ── WETH/USDT ────────────────────────────────────────────────────────────────
   - address: "0x0d4a11d5EEaaC28EC3F61d100daF4d40471f1852"
+    dex: uniswap_v2
     token0_address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
     token0_symbol: WETH
     token0_decimals: 18
@@ -20,7 +34,18 @@ pools:
     token1_symbol: USDT
     token1_decimals: 6
 
+  - address: "0x06da0fd433C1A5d7a4faa01111c044910A184553"
+    dex: sushiswap_v2
+    token0_address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    token0_symbol: WETH
+    token0_decimals: 18
+    token1_address: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    token1_symbol: USDT
+    token1_decimals: 6
+
+  # ── WETH/DAI ─────────────────────────────────────────────────────────────────
   - address: "0xA478c2975Ab1Ea89e8196811F51A7B7Ade33eB11"
+    dex: uniswap_v2
     token0_address: "0x6B175474E89094C44Da98b954EedeAC495271d0F"
     token0_symbol: DAI
     token0_decimals: 18
@@ -28,7 +53,18 @@ pools:
     token1_symbol: WETH
     token1_decimals: 18
 
+  - address: "0xC3D03e4F041Fd4cD388c549Ee2A29a9E5075882f"
+    dex: sushiswap_v2
+    token0_address: "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+    token0_symbol: DAI
+    token0_decimals: 18
+    token1_address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    token1_symbol: WETH
+    token1_decimals: 18
+
+  # ── WETH/WBTC ────────────────────────────────────────────────────────────────
   - address: "0xBb2b8038a1640196FbE3e38816F3e67Cba72D940"
+    dex: uniswap_v2
     token0_address: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
     token0_symbol: WBTC
     token0_decimals: 8
@@ -36,7 +72,18 @@ pools:
     token1_symbol: WETH
     token1_decimals: 18
 
+  - address: "0xCEfF51756c56CeFFCA006cD410B03FFC46dd3a58"
+    dex: sushiswap_v2
+    token0_address: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
+    token0_symbol: WBTC
+    token0_decimals: 8
+    token1_address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    token1_symbol: WETH
+    token1_decimals: 18
+
+  # ── WETH/SHIB ────────────────────────────────────────────────────────────────
   - address: "0x811beEd0119b4AfCE20D2583EB608C6F7AF1954f"
+    dex: uniswap_v2
     token0_address: "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE"
     token0_symbol: SHIB
     token0_decimals: 18
@@ -44,7 +91,27 @@ pools:
     token1_symbol: WETH
     token1_decimals: 18
 
+  - address: "0x24D3dD4a62e29770cf98810b09F89D3A90279E7a"
+    dex: sushiswap_v2
+    token0_address: "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE"
+    token0_symbol: SHIB
+    token0_decimals: 18
+    token1_address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    token1_symbol: WETH
+    token1_decimals: 18
+
+  # ── WETH/LINK ────────────────────────────────────────────────────────────────
   - address: "0xa2107FA5B38d9bbd2C461D6EDf11B11A50F6b974"
+    dex: uniswap_v2
+    token0_address: "0x514910771AF9Ca656af840dff83E8264EcF986CA"
+    token0_symbol: LINK
+    token0_decimals: 18
+    token1_address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    token1_symbol: WETH
+    token1_decimals: 18
+
+  - address: "0xC40D16476380e4037e6b1A2594cAF6a6cc8Da967"
+    dex: sushiswap_v2
     token0_address: "0x514910771AF9Ca656af840dff83E8264EcF986CA"
     token0_symbol: LINK
     token0_decimals: 18

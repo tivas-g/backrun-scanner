@@ -53,8 +53,9 @@ def main() -> None:
         sym0 = pool["token0_symbol"]
         sym1 = pool["token1_symbol"]
 
+        dex = pool["dex"]
         print(
-            f"{sym0}/{sym1}: "
+            f"[{dex}] {sym0}/{sym1}: "
             f"1 {sym0} = {price_1_per_0:.6g} {sym1}  "
             f"(1 {sym1} = {price_0_per_1:.6g} {sym0})"
         )
