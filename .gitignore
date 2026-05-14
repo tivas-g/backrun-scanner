@@ -1,0 +1,22 @@
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# env / secrets
+.env
+.env.local
+
+# data
+data/*.jsonl
+!data/sample.jsonl
+
+# editor / os
+.vscode/
+.idea/
+.DS_Store
+
+# notebooks
+.ipynb_checkpoints/

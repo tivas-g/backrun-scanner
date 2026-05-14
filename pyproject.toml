@@ -1,0 +1,20 @@
+[project]
+name = "backrun-scanner"
+version = "0.1.0"
+description = "Live Ethereum mainnet backrun opportunity scanner"
+requires-python = ">=3.11"
+dependencies = [
+    "web3>=7.0",
+    "eth-abi>=5.0",
+    "websockets>=12.0",
+    "python-dotenv>=1.0",
+    "pyyaml>=6.0",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
